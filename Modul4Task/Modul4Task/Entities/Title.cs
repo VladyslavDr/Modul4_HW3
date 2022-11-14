@@ -10,5 +10,6 @@ namespace Modul4Task.Entities
     {
         public int TitleId { get; set; }
         public string Name { get; set; }
+        public List<Employee> Employes { get; set; } = new List<Employee>();
     }
 }

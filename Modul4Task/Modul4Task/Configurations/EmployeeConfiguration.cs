@@ -17,6 +17,14 @@ namespace Modul4Task.Configurations
             builder.Property(p => p.DateOfBirth).HasColumnName("DateOfBirth");
             builder.Property(p => p.OfficeId).HasColumnName("OfficeId").ValueGeneratedNever().IsRequired();
             builder.Property(p => p.TitleId).HasColumnName("TitleId").ValueGeneratedNever().IsRequired();
+            builder.HasOne(d => d.Office)
+                .WithMany(p => p.Employes)
+                .HasForeignKey(d => d.OfficeId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(d => d.Title)
+                .WithMany(p => p.Employes)
+                .HasForeignKey(d => d.TitleId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

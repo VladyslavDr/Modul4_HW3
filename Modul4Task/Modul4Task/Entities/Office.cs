@@ -11,9 +11,6 @@ namespace Modul4Task.Entities
         public int OfficeId { get; set; }
         public string Title { get; set; }
         public string Location { get; set; }
-
-        public int EmployeeId { get; set; }
-
-        public Employee Employee { get; set; }
+        public List<Employee> Employes { get; set; } = new List<Employee>();
     }
 }
