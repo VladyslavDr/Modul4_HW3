@@ -13,6 +13,8 @@ namespace Modul4Task.Configurations
             builder.Property(p => p.EmployeeProjectId).HasColumnName("EmployeeProjectId").IsRequired();
             builder.Property(p => p.Rate).HasColumnName("Rate").HasColumnType("money").IsRequired();
             builder.Property(p => p.StartedDate).HasColumnName("StartedDate").HasMaxLength(7).IsRequired();
+            builder.Property(p => p.EmployeeId).HasColumnName("EmployeeId").ValueGeneratedNever().IsRequired();
+            builder.Property(p => p.ProjectId).HasColumnName("ProjectId").ValueGeneratedNever().IsRequired();
         }
     }
 }
